@@ -18,7 +18,7 @@ func main() {
 	})
 	app.Get("/notes", func(ctx *fiber.Ctx) error {
 
-		return render(ctx, components.Notes(components.Notes(len(notes.GetAll()))))
+		return render(ctx, components.Index(components.Notes(notes.GetAll())))
 	})
 	app.Post("/notes", func(ctx *fiber.Ctx) error {
 		notes.Add(notes.CreateNote{
