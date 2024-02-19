@@ -10,7 +10,7 @@ import "context"
 import "io"
 import "bytes"
 
-import "github.com/japb1998/note-taker-htmx/notes"
+import "github.com/e1ehpark/note-taker-htmx/notes"
 import "strconv"
 
 func Notes(notes []notes.Note) templ.Component {
