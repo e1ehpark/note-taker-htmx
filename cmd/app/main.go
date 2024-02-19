@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/a-h/templ"
-	"github.com/e1ehpark/note-taker-htmx/componets"
+	"github.com/e1ehpark/note-taker-htmx/components"
 	"github.com/e1ehpark/note-taker-htmx/notes"
 	"github.com/gofiber/fiber/v2"
 )
