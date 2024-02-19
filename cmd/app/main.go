@@ -13,14 +13,14 @@ import (
 func main() {
 	app := fiber.New()
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return render(ctx, componets.Index(componets.NotesForm(len(notes.GetAll()))))
+	app.Get("/", func(ctx *fiber.Ctx) error {
+		return render(ctx, components.Index(components.NotesForm(len(notes.GetAll()))))
 	})
-	app.Get("/notes", func(c *fiber.Ctx) error {
+	app.Get("/notes", func(ctx *fiber.Ctx) error {
 
-		return render(ctx, componets.Notes(componets.Notes(len(notes.GetAll()))))
+		return render(ctx, components.Notes(components.Notes(len(notes.GetAll()))))
 	})
-	app.Post("/notes", func(c *fiber.Ctx) error {
+	app.Post("/notes", func(ctx *fiber.Ctx) error {
 		notes.Add(notes.CreateNote{
 			Title: ctx.FormValue("title"),
 			Body:  ctx.FormValue("body"),
@@ -43,7 +43,7 @@ func main() {
 		if err != nil {
 			ctx.Status(404)
 		}
-		var notes templ.Component = componts.Notes(notes.GetAll())
+		var notes templ.Component = components.Notes(notes.GetAll())
 		return render(ctx, notes)
 	})
 	app.Listen(":8080")
