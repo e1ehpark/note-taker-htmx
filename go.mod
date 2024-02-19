@@ -1,4 +1,4 @@
-module note-taker-htmx
+module github.com/e1ehpark/note-taker-htmx
 
 go 1.22.0
 
